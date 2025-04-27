@@ -7,14 +7,14 @@ display: flex;
 const rotationAnimation = keyframes`
   0% {
     transform: rotate(0deg);
-    border-radius: 0px;
+    border-radius: 10px;
   }
   50% {
     border-radius: 100px;
   }
   100% {
     transform: rotate(360deg);
-    border-radius: 0px;
+    border-radius: 10px;
   }
 `
 
