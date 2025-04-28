@@ -2,6 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
 display: flex;
+height: 100vh;
+width: 100vw;
+justify-content: center;
+align-items: center;
 `;
 
 const rotationAnimation = keyframes`
@@ -17,6 +21,10 @@ const rotationAnimation = keyframes`
     border-radius: 10px;
   }
 `
+const Emoji = styled.span`
+  font-size: 46px;
+
+`
 
 const Box = styled.div`
   display: flex;
@@ -26,16 +34,9 @@ const Box = styled.div`
   width: 100px;
   background-color: orange;
   animation: ${rotationAnimation} 1s linear infinite;
-  span {
-    font-size: 46px;
-    // span:hover
-    &:hover {
+  ${Emoji}:hover {
       font-size: 56px;
     }
-    &:active {
-      opacity: 0.2;
-    }
-  }
 `
 
 function App() {
@@ -43,11 +44,15 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😊</span>
+        <Emoji>😊</Emoji>
       </Box>
+      <Emoji>🩵</Emoji>
     </Wrapper>
 
   )
 }
 
 export default App;
+
+// Box 컴포넌트 안의 Emoji 는 hover 가 작동함
+// 왜? 모든 Emoji 이름을 가진 BOX 안의 것들은 hover 됐을 때 98px의 크기를 가진다.
