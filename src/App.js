@@ -6,6 +6,11 @@ height: 100vh;
 width: 100vw;
 justify-content: center;
 align-items: center;
+background-color: ${(props) => props.theme.backgroundColor};
+`;
+
+const Text = styled.h1`
+  color: ${(props) => props.theme.textColor};
 `;
 
 const rotationAnimation = keyframes`
@@ -44,9 +49,8 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <Emoji>😊</Emoji>
+        <Text>Hi</Text>
       </Box>
-      <Emoji>🩵</Emoji>
     </Wrapper>
 
   )
