@@ -2,6 +2,10 @@ import styled from "styled-components"
 
 interface ContainerProps {
     bgColor: string;
+    borderColor: string;
+    // 여기 부분은 borderColor 는 string 이어야만 함 -> 즉, required 상태여야 하는것
+    // borderColor? : string;은 옳지 않게 됨
+    // 또한 undefined가 들어오면 styled-components가 오류를 낼 수도 있어서, 안전하게 ??를 사용해 기본값을 지정해야함!
 }
 
 const Container = styled.div<ContainerProps>`
@@ -9,14 +13,16 @@ const Container = styled.div<ContainerProps>`
     height: 200px;
     background-color: ${props => props.bgColor};
     border-radius: 100px;
+    border: 1px solid ${props => props.borderColor};
 `;
 
 interface CircleProps {
     bgColor: string;
+    borderColor?: string; // Optional Props
 }
 
-function Circle({ bgColor }: CircleProps) {
-    return <Container bgColor={bgColor}></Container>;
+function Circle({ bgColor, borderColor }: CircleProps) {
+    return <Container bgColor={bgColor} borderColor={borderColor ?? "white"}></Container>;
 }
 
 export default Circle;
