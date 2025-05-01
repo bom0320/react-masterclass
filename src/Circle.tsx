@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components"
 
 interface ContainerProps {
@@ -23,6 +24,10 @@ interface CircleProps {
 }
 
 function Circle({ bgColor, borderColor, text = "Default Text" }: CircleProps) {
+    const [value, setValue] = useState<string | number>(0);
+    // 여기서 알아야할 게 TypeScript는 똑똑해서
+    // TypeScript 를 쓰지 않았더라도, default 값으로 우리가 어떤 값을 쓸건지 안다.(ex: counter default Value Number)
+
     return <Container bgColor={bgColor} borderColor={borderColor ?? "white"}>
         {text}
     </Container>;
