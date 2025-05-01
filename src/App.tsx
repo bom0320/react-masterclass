@@ -13,10 +13,15 @@ function App() {
     // const value = event.currentTarget.value;
     // setValue(value);
     setValue(value);
-
   }
+
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("hello", value);
+  }
+
   return <div>
-    <form>
+    <form onSubmit={onSubmit}>
       <input type="text" placeholder="userName" value={value} onChange={onChange} />
 
       <button >Log in</button>
