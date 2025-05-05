@@ -22,7 +22,7 @@ function App() {
     <form onSubmit={onSubmit}>
       <input type="text" value={value} placeholder="userName" onChange={onChange} />
 
-      <button >Log in</button>
+      <button >Login</button>
     </form>
   </div>
 }
