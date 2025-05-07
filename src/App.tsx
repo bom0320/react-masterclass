@@ -7,6 +7,7 @@ function App() {
 
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
     console.log(event.currentTarget.value);
+
     const {
       currentTarget: { value },
     } = event;
@@ -15,7 +16,7 @@ function App() {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("hello", value);
+    console.log("console:", value);
   }
 
   return <div>
