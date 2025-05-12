@@ -10,17 +10,18 @@ const H1 = styled.h1`
   color: ${(props) => props.theme.textColor};
 `;
 
-interface TextProps {
+
+interface DummyType {
   text: string,
   active?: boolean,
-};
-function Dummy({ text, active = false }: TextProps) {
-  return <h1>{text}</h1>
-};
+}
+function Dummy({ text, active = false }: DummyType) {
+  return <div>{text}</div>
+}
 
-const onClick = () => {
 
-};
+const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+}
 
 function App() {
 
@@ -28,10 +29,7 @@ function App() {
   return <Container>
     <H1>Protected</H1>
     <Dummy text="hello" active></Dummy>
-    <form>
-      <button onClick={onClick}>Click me</button>
-    </form>
-
+    <button onClick={onClick}>Click me</button>
   </Container>
 }
 
